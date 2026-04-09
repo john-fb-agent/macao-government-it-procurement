@@ -44,7 +44,7 @@
 - **爬蟲**: BeautifulSoup + requests
 - **數據儲存**: JSON + Git
 - **部署**: GitHub Pages
-- **自動化**: OpenClaw Cron
+- **自動化**: OpenClaw Cron (每週四 8:30)
 
 ## 目錄結構
 

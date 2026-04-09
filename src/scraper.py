@@ -52,14 +52,25 @@ class ProcurementScraper:
         soup = BeautifulSoup(html, 'html.parser')
         announcements = []
         
-        # 查找所有公告項目
-        # 根據實際網頁結構調整選擇器
-        news_items = soup.find_all('div', class_='news-item') or \
-                     soup.find_all('div', class_='item') or \
+        # 查找所有公告項目 - 根據實際網頁結構
+        # 網頁使用 dl > dt/dd 結構
+        news_items = soup.find_all('dl') or \
+                     soup.find_all('div', class_=re.compile('news|item|list|result')) or \
                      soup.find_all('tr') or \
-                     soup.find_all('div', class_=re.compile('news|item|list'))
+                     soup.find_all('article')
         
         print(f"找到 {len(news_items)} 個項目")
+        
+        # 如果沒有找到項目，嘗試直接解析整個內容區域
+        if not news_items:
+            content_div = soup.find('div', id='content') or \
+                         soup.find('div', class_='content') or \
+                         soup.find('main') or \
+                         soup.body
+            if content_div:
+                # 嘗試查找所有包含鏈接的段落
+                news_items = content_div.find_all(['p', 'div', 'li'])
+                print(f"從內容區找到 {len(news_items)} 個項目")
         
         for item in news_items:
             try:
@@ -74,40 +85,63 @@ class ProcurementScraper:
     
     def _extract_announcement(self, item):
         """從單個項目中提取公告資訊"""
-        # 嘗試多種選擇器
-        title_elem = (item.find('a', class_='title') or 
-                     item.find('a', class_='news-title') or
-                     item.find('a') or
-                     item.find('div', class_='title'))
+        # 獲取所有文本內容
+        text = item.get_text(strip=True)
         
-        if not title_elem:
+        # 查找所有鏈接
+        links = item.find_all('a')
+        
+        # 嘗試找到部門鏈接（通常是第一個鏈接）
+        dept_link = None
+        bulletin_link = None
+        
+        for link in links:
+            href = link.get('href', '')
+            link_text = link.get_text(strip=True)
+            
+            # 檢查是否是部門鏈接（包含 /link/ 或部門名稱）
+            if '/link/' in href and not dept_link:
+                dept_link = link
+            # 檢查是否是公報鏈接
+            elif 'bo.dsaj.gov.mo/bo/' in href or '《公報》' in link_text:
+                bulletin_link = link
+        
+        if not dept_link:
             return None
         
-        title_text = title_elem.get_text(strip=True)
+        # 提取部門名稱
+        department = dept_link.get_text(strip=True)
         
-        # 提取部門（【】內的文字）
-        dept_match = re.search(r'【(.+?)】', title_text)
-        department = dept_match.group(1) if dept_match else '未知部門'
+        # 提取摘要 - 在部門鏈接之後的文本
+        # 移除所有鏈接文本，保留純文本內容
+        summary = text
+        for link in links:
+            summary = summary.replace(link.get_text(strip=True), '', 1)
         
-        # 提取摘要（【】後的文字）
-        summary = re.sub(r'【.+?】', '', title_text).strip()
-        
-        # 提取連結
-        link = title_elem.get('href', '') if title_elem.name == 'a' else ''
-        if link and not link.startswith('http'):
-            link = urljoin(self.target_url, link)
-        
-        # 提取日期
-        date_elem = (item.find('span', class_='date') or
-                    item.find('td', class_='date') or
-                    item.find('div', class_='date'))
-        date = date_elem.get_text(strip=True) if date_elem else ''
+        # 清理摘要
+        summary = re.sub(r'^\s*[,，]?\s*', '', summary)  # 移除開頭的標點
+        summary = re.sub(r'\s+', ' ', summary)  # 規範化空白
         
         # 提取公報編號
-        bulletin_elem = (item.find('span', class_='bulletin') or
-                        item.find('span', class_=re.compile('bulletin|公報')) or
-                        item.find('td', string=re.compile('《公報》')))
-        bulletin_number = bulletin_elem.get_text(strip=True) if bulletin_elem else ''
+        bulletin_number = ''
+        if bulletin_link:
+            bulletin_number = bulletin_link.get_text(strip=True)
+        else:
+            # 嘗試從文本中提取
+            bulletin_match = re.search(r'《公報》[^\n]+', text)
+            if bulletin_match:
+                bulletin_number = bulletin_match.group(0).strip()
+        
+        # 提取日期
+        date = ''
+        date_match = re.search(r'(\d{4}/\d{2}/\d{2})', text)
+        if date_match:
+            date = date_match.group(1)
+        
+        # 提取連結
+        link = dept_link.get('href', '')
+        if link and not link.startswith('http'):
+            link = urljoin(self.target_url, link)
         
         # 生成唯一 ID
         content = f"{department}{summary}{date}"
@@ -116,21 +150,34 @@ class ProcurementScraper:
         return {
             'id': record_id,
             'department': department,
-            'summary': summary,
+            'summary': summary[:200],  # 限制長度
             'bulletin_number': bulletin_number,
             'date': date,
             'url': link,
-            'title': title_text
+            'title': f"【{department}】{summary[:100]}"
         }
     
     def filter_it_related(self, announcements):
         """過濾 IT 相關公告"""
         it_announcements = []
+        exclude_keywords = [k.lower() for k in self.config.get('exclude_keywords', [])]
         
         for ann in announcements:
             text = f"{ann['department']} {ann['summary']}".lower()
             matched_keywords = []
             
+            # 檢查是否包含排除關鍵詞
+            excluded = False
+            for exclude_kw in exclude_keywords:
+                if exclude_kw in text:
+                    excluded = True
+                    print(f"✗ 排除 (包含 '{exclude_kw}'): {ann['department']} - {ann['summary'][:50]}...")
+                    break
+            
+            if excluded:
+                continue
+            
+            # 檢查是否包含 IT 關鍵詞
             for keyword in self.keywords:
                 if keyword in text:
                     matched_keywords.append(keyword)
