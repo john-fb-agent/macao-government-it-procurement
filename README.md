@@ -10,20 +10,28 @@
 
 ## 監控關鍵詞
 
+### 明確 IT 關鍵詞
 - 資訊科技 / Information Technology
-- 軟件 / Software
-- 硬件 / Hardware
+- 軟件 / Software / 軟體
+- 硬件 / Hardware / 硬體
 - 電腦 / Computer
 - 伺服器 / Server
-- 網絡 / Network
-- 網路 / Network
-- 安全 / Security
+- 網絡 / Network / 網路
+- 資訊安全 / Information Security
 - 防火牆 / Firewall
-- 系統 / System
+- 數據庫 / Database
 - 數據中心 / Data Center
 - 雲端 / Cloud
-- 軟體 / Software
-- 硬體 / Hardware
+- 人工智能 / AI / Artificial Intelligence
+- 大數據 / Big Data
+- 平台 / Platform
+
+### AI 智能判斷
+除關鍵詞匹配外，系統還使用 **AI 智能過濾** (`src/ai_filter.py`)：
+- 分析公告摘要的 IT 相關性
+- 識別隱含的 IT 採購需求
+- 排除非 IT 系統（消防、空調、電梯等）
+- 判斷 IT 設備類型（電腦、伺服器、網絡設備等）
 
 ## 網頁結構
 
@@ -42,9 +50,10 @@
 
 - **語言**: Python 3
 - **爬蟲**: BeautifulSoup + requests
+- **智能過濾**: 兩階段（關鍵詞 + AI 判斷）
 - **數據儲存**: JSON + Git
 - **部署**: GitHub Pages
-- **自動化**: OpenClaw Cron (每週四 8:30)
+- **自動化**: OpenClaw Cron (每週三 14:30)
 
 ## 目錄結構
 
@@ -52,27 +61,39 @@
 .
 ├── README.md
 ├── docs/
-│   ├── DESIGN.md
-│   ├── API.md
-│   └── CHANGELOG.md
+│   ├── DESIGN.md          # 系統設計文檔
+│   ├── API.md             # 網站結構分析
+│   └── CHANGELOG.md       # 更新日誌
 ├── src/
-│   ├── scraper.py
-│   ├── notifier.py
-│   └── generator.py
+│   ├── main.py            # 主程式
+│   ├── scraper.py         # 爬蟲模組
+│   ├── ai_filter.py       # AI 智能過濾
+│   ├── storage.py         # 數據儲存
+│   ├── generator.py       # HTML 生成
+│   └── notifier.py        # 通知模組
 ├── data/
-│   └── records.json
+│   └── records.json       # 記錄數據
 ├── config/
-│   └── config.example.json
-├── .gitignore
-└── .github/
-    └── workflows/
-        └── deploy.yml
+│   ├── config.json        # 配置文件（實際使用）
+│   └── config.example.json # 配置範例
+├── logs/                   # 執行日誌
+├── index.html             # 所有記錄頁面
+├── recent.html            # 最近6個月頁面
+└── .github/workflows/
+    └── deploy.yml         # GitHub Pages 部署
 ```
+
+## 執行記錄
+
+| 日期 | 找到記錄 | 備註 |
+|------|----------|------|
+| 2026-04-09 | 1 條 | 澳門大學 - 量子材料平台 |
 
 ## 開發者
 
 - 作者: OpenClaw Agent
 - 創建日期: 2026-04-09
+- 版本: v1.1.0
 
 ## License
 
