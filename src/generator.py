@@ -19,7 +19,7 @@ class HTMLGenerator:
             self.data = json.load(f)
     
     def _get_base_template(self):
-        """基礎 HTML 模板"""
+        """基礎 HTML 模板 - 暗黑模式"""
         return """<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -35,8 +35,8 @@ class HTMLGenerator:
         
         body {{
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            background: #0d1117;
+            color: #c9d1d9;
             line-height: 1.6;
         }}
         
@@ -47,22 +47,25 @@ class HTMLGenerator:
         }}
         
         header {{
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: #f0f6fc;
             padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
             border-radius: 10px;
+            border: 1px solid #30363d;
         }}
         
         header h1 {{
             font-size: 2.5em;
             margin-bottom: 10px;
+            color: #58a6ff;
         }}
         
         header p {{
             font-size: 1.1em;
             opacity: 0.9;
+            color: #8b949e;
         }}
         
         .stats {{
@@ -73,51 +76,61 @@ class HTMLGenerator:
         }}
         
         .stat-card {{
-            background: white;
+            background: #161b22;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             text-align: center;
+            border: 1px solid #30363d;
         }}
         
         .stat-card h3 {{
-            color: #667eea;
+            color: #58a6ff;
             font-size: 2em;
             margin-bottom: 5px;
         }}
         
         .stat-card p {{
-            color: #666;
+            color: #8b949e;
         }}
         
         .filters {{
-            background: white;
+            background: #161b22;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
         }}
         
         .filters input {{
             width: 100%;
             padding: 12px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #30363d;
             border-radius: 8px;
             font-size: 16px;
+            background: #0d1117;
+            color: #c9d1d9;
+        }}
+        
+        .filters input::placeholder {{
+            color: #6e7681;
         }}
         
         .record {{
-            background: white;
+            background: #161b22;
             padding: 20px;
             margin-bottom: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #30363d;
         }}
         
         .record:hover {{
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-color: #58a6ff;
         }}
         
         .record-header {{
@@ -128,8 +141,8 @@ class HTMLGenerator:
         }}
         
         .department {{
-            background: #667eea;
-            color: white;
+            background: #1f6feb;
+            color: #f0f6fc;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
@@ -137,14 +150,14 @@ class HTMLGenerator:
         }}
         
         .date {{
-            color: #999;
+            color: #8b949e;
             font-size: 0.9em;
         }}
         
         .summary {{
             font-size: 1.1em;
             margin-bottom: 10px;
-            color: #333;
+            color: #c9d1d9;
         }}
         
         .keywords {{
@@ -154,45 +167,53 @@ class HTMLGenerator:
         }}
         
         .keyword {{
-            background: #e3f2fd;
-            color: #1976d2;
+            background: #238636;
+            color: #f0f6fc;
             padding: 3px 10px;
             border-radius: 15px;
             font-size: 0.8em;
         }}
         
         .bulletin {{
-            color: #666;
+            color: #8b949e;
             font-size: 0.9em;
             margin-top: 10px;
         }}
         
         .link {{
-            color: #667eea;
+            color: #58a6ff;
             text-decoration: none;
             font-weight: 500;
         }}
         
         .link:hover {{
             text-decoration: underline;
+            color: #79c0ff;
         }}
         
         footer {{
             text-align: center;
             padding: 40px 20px;
-            color: #999;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            margin-top: 40px;
+        }}
+        
+        footer a {{
+            color: #58a6ff;
         }}
         
         .nav {{
-            background: white;
+            background: #161b22;
             padding: 15px 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border: 1px solid #30363d;
         }}
         
         .nav a {{
-            color: #667eea;
+            color: #58a6ff;
             text-decoration: none;
             margin-right: 20px;
             font-weight: 500;
@@ -200,10 +221,11 @@ class HTMLGenerator:
         
         .nav a:hover {{
             text-decoration: underline;
+            color: #79c0ff;
         }}
         
         .nav a.active {{
-            color: #333;
+            color: #f0f6fc;
             font-weight: 700;
         }}
     </style>
