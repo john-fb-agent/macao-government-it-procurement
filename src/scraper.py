@@ -158,9 +158,18 @@ class ProcurementScraper:
         }
     
     def filter_it_related(self, announcements):
-        """過濾 IT 相關公告"""
+        """過濾 IT 相關公告 - 結合關鍵詞和 AI 判斷"""
+        from ai_filter import AIFilter
+        
         it_announcements = []
         exclude_keywords = [k.lower() for k in self.config.get('exclude_keywords', [])]
+        ai_filter = AIFilter()
+        
+        print(f"\n第一階段：關鍵詞過濾 {len(announcements)} 條公告...")
+        
+        # 第一階段：關鍵詞過濾
+        keyword_matched = []
+        remaining = []
         
         for ann in announcements:
             text = f"{ann['department']} {ann['summary']}".lower()
@@ -185,8 +194,29 @@ class ProcurementScraper:
             if matched_keywords:
                 ann['keywords_matched'] = matched_keywords
                 ann['found_at'] = datetime.now().isoformat()
-                it_announcements.append(ann)
-                print(f"✓ IT 相關: {ann['department']} - {ann['summary'][:50]}...")
+                ann['match_type'] = 'keyword'
+                keyword_matched.append(ann)
+                print(f"✓ IT 相關（關鍵詞）: {ann['department']} - {ann['summary'][:50]}...")
+            else:
+                remaining.append(ann)
+        
+        print(f"\n關鍵詞匹配: {len(keyword_matched)} 條")
+        print(f"待 AI 判斷: {len(remaining)} 條")
+        
+        # 第二階段：AI 智能判斷
+        if remaining:
+            print(f"\n第二階段：AI 智能判斷...")
+            ai_matched = ai_filter.filter_announcements(remaining)
+            
+            for ann in ai_matched:
+                ann['match_type'] = 'ai'
+                keyword_matched.append(ann)
+        
+        it_announcements = keyword_matched
+        
+        print(f"\n{'='*60}")
+        print(f"過濾完成：關鍵詞 {len([a for a in it_announcements if a.get('match_type')=='keyword'])} 條 + AI {len([a for a in it_announcements if a.get('match_type')=='ai'])} 條 = {len(it_announcements)} 條")
+        print(f"{'='*60}")
         
         return it_announcements
     
