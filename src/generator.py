@@ -353,7 +353,7 @@ class HTMLGenerator:
         recent_records = []
         for record in self.data.get('records', []):
             try:
-                record_date = datetime.strptime(record.get('date', ''), '%Y-%m-%d')
+                record_date = datetime.strptime(record.get('date', '').replace('/', '-'), '%Y-%m-%d')
                 if record_date >= cutoff_date:
                     recent_records.append(record)
             except:
