@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-04-22T14:30:06.010675",
-  "total_records": 3,
+  "last_check": "2026-05-06T14:34:10.932926",
+  "total_records": 5,
   "records": [
     {
       "id": "2256d92aa672",
@@ -44,6 +44,34 @@
         "IT 系統"
       ],
       "match_type": "ai"
+    },
+    {
+      "id": "598c918fb5c5",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學健康科學學院供應及安裝多通道活細胞分析系統及超高解析亞細胞成像系統進行公開招標。",
+      "bulletin_number": "《公報》第16期,第二組,2026/04/22",
+      "date": "2026/04/22",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98512",
+      "title": "【澳門大學】公告一則，關於為澳門大學健康科學學院供應及安裝多通道活細胞分析系統及超高解析亞細胞成像系統進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-04-29T17:28:31.206358",
+      "match_type": "keyword"
+    },
+    {
+      "id": "2d7fd53ab079",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學應用物理及材料工程研究院供應及安裝薄膜材料分析及表徵設備系統進行公開招標。",
+      "bulletin_number": "《公報》第11期,第二組,2026/03/18",
+      "date": "2026/03/18",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98214",
+      "title": "【澳門大學】公告一則，關於為澳門大學應用物理及材料工程研究院供應及安裝薄膜材料分析及表徵設備系統進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-04-29T17:28:31.206440",
+      "match_type": "keyword"
     }
   ]
 }
