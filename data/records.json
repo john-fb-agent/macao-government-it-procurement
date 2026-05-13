@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-05-07T10:48:54.291092",
-  "total_records": 5,
+  "last_check": "2026-05-13T14:32:28.507236",
+  "total_records": 6,
   "records": [
     {
       "id": "2256d92aa672",
@@ -71,6 +71,20 @@
         "系統"
       ],
       "found_at": "2026-04-29T17:28:31.206440",
+      "match_type": "keyword"
+    },
+    {
+      "id": "9c0f5c6b075e",
+      "department": "澳門理工大學",
+      "summary": "公告一則，關於澳門理工大學購買超算伺服器的公開招標。",
+      "bulletin_number": "《公報》第19期,第二組,2026/05/13",
+      "date": "2026/05/13",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98717",
+      "title": "【澳門理工大學】公告一則，關於澳門理工大學購買超算伺服器的公開招標。",
+      "keywords_matched": [
+        "伺服器"
+      ],
+      "found_at": "2026-05-13T14:32:28.506196",
       "match_type": "keyword"
     }
   ]
