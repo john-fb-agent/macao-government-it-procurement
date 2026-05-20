@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-05-15T14:09:22.609842",
-  "total_records": 6,
+  "last_check": "2026-05-20T14:32:49.064315",
+  "total_records": 10,
   "records": [
     {
       "id": "2256d92aa672",
@@ -85,6 +85,62 @@
         "伺服器"
       ],
       "found_at": "2026-05-13T14:32:28.506196",
+      "match_type": "keyword"
+    },
+    {
+      "id": "aa24b9d87c45",
+      "department": "交通事務局",
+      "summary": "公告一則，關於「路氹城汽車檢驗中心及駕駛學習暨考試中心機電系統維修保養服務」的公開招標。",
+      "bulletin_number": "《公報》第20期,第二組,2026/05/20",
+      "date": "2026/05/20",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98794",
+      "title": "【交通事務局】公告一則，關於「路氹城汽車檢驗中心及駕駛學習暨考試中心機電系統維修保養服務」的公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-05-20T14:32:49.063241",
+      "match_type": "keyword"
+    },
+    {
+      "id": "4b09c9564531",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學科技學院供應及安裝水下動作捕捉系統進行公開招標。",
+      "bulletin_number": "《公報》第20期,第二組,2026/05/20",
+      "date": "2026/05/20",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98792",
+      "title": "【澳門大學】公告一則，關於為澳門大學科技學院供應及安裝水下動作捕捉系統進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-05-20T14:32:49.063261",
+      "match_type": "keyword"
+    },
+    {
+      "id": "722a1cfc2b82",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學智慧城市物聯網全國重點實驗室供應及安裝物聯網通感智算一體化平台進行公開招標。",
+      "bulletin_number": "《公報》第20期,第二組,2026/05/20",
+      "date": "2026/05/20",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98791",
+      "title": "【澳門大學】公告一則，關於為澳門大學智慧城市物聯網全國重點實驗室供應及安裝物聯網通感智算一體化平台進行公開招標。",
+      "keywords_matched": [
+        "平台"
+      ],
+      "found_at": "2026-05-20T14:32:49.063267",
+      "match_type": "keyword"
+    },
+    {
+      "id": "3fdee3613c66",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學協同創新研究院供應及安裝多模態無線便攜全腦近紅外及無源電極腦電圖3D定位導航成像系統進行公開招標。",
+      "bulletin_number": "《公報》第20期,第二組,2026/05/20",
+      "date": "2026/05/20",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98790",
+      "title": "【澳門大學】公告一則，關於為澳門大學協同創新研究院供應及安裝多模態無線便攜全腦近紅外及無源電極腦電圖3D定位導航成像系統進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-05-20T14:32:49.063275",
       "match_type": "keyword"
     }
   ]
