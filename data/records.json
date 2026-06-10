@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-06-03T14:33:49.590502",
-  "total_records": 10,
+  "last_check": "2026-06-10T14:33:06.544515",
+  "total_records": 11,
   "records": [
     {
       "id": "2256d92aa672",
@@ -141,6 +141,20 @@
         "系統"
       ],
       "found_at": "2026-05-20T14:32:49.063275",
+      "match_type": "keyword"
+    },
+    {
+      "id": "0e101eafc439",
+      "department": "衛生局",
+      "summary": "公告一則，關於為取得“向仁伯爵綜合醫院提供空調系統維修保養服務”進行公開招標。",
+      "bulletin_number": "《公報》第23期,第二組,2026/06/10",
+      "date": "2026/06/10",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/98968",
+      "title": "【衛生局】公告一則，關於為取得“向仁伯爵綜合醫院提供空調系統維修保養服務”進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-06-10T14:33:06.543442",
       "match_type": "keyword"
     }
   ]
