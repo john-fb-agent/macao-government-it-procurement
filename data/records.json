@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-06-10T14:33:06.544515",
-  "total_records": 11,
+  "last_check": "2026-06-17T14:34:00.201037",
+  "total_records": 12,
   "records": [
     {
       "id": "2256d92aa672",
@@ -155,6 +155,20 @@
         "系統"
       ],
       "found_at": "2026-06-10T14:33:06.543442",
+      "match_type": "keyword"
+    },
+    {
+      "id": "cedc37aadd20",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學微電子研究院供應及安裝以數據為導向的積體電路測試平台進行公開招標。",
+      "bulletin_number": "《公報》第24期,第二組,2026/06/17",
+      "date": "2026/06/17",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99031",
+      "title": "【澳門大學】公告一則，關於為澳門大學微電子研究院供應及安裝以數據為導向的積體電路測試平台進行公開招標。",
+      "keywords_matched": [
+        "平台"
+      ],
+      "found_at": "2026-06-17T14:34:00.199472",
       "match_type": "keyword"
     }
   ]
