@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-06-17T14:34:00.201037",
-  "total_records": 12,
+  "last_check": "2026-06-24T14:34:00.275511",
+  "total_records": 13,
   "records": [
     {
       "id": "2256d92aa672",
@@ -169,6 +169,20 @@
         "平台"
       ],
       "found_at": "2026-06-17T14:34:00.199472",
+      "match_type": "keyword"
+    },
+    {
+      "id": "0ec989167cf1",
+      "department": "澳門理工大學",
+      "summary": "公告一則，關於澳門理工大學購置自動化人工智能藥物發現實驗室設備平臺的公開招標。",
+      "bulletin_number": "《公報》第25期,第二組,2026/06/24",
+      "date": "2026/06/24",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99133",
+      "title": "【澳門理工大學】公告一則，關於澳門理工大學購置自動化人工智能藥物發現實驗室設備平臺的公開招標。",
+      "keywords_matched": [
+        "人工智能"
+      ],
+      "found_at": "2026-06-24T14:34:00.274424",
       "match_type": "keyword"
     }
   ]
