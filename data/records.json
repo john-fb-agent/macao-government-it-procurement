@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-06-24T14:34:00.275511",
-  "total_records": 13,
+  "last_check": "2026-07-01T14:32:34.798164",
+  "total_records": 14,
   "records": [
     {
       "id": "2256d92aa672",
@@ -183,6 +183,20 @@
         "人工智能"
       ],
       "found_at": "2026-06-24T14:34:00.274424",
+      "match_type": "keyword"
+    },
+    {
+      "id": "22e1d18b54ed",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學微電子研究院供應及安裝一批芯片測試平台進行公開招標。",
+      "bulletin_number": "《公報》第26期,第二組,2026/07/01",
+      "date": "2026/07/01",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99212",
+      "title": "【澳門大學】公告一則，關於為澳門大學微電子研究院供應及安裝一批芯片測試平台進行公開招標。",
+      "keywords_matched": [
+        "平台"
+      ],
+      "found_at": "2026-07-01T14:32:34.797079",
       "match_type": "keyword"
     }
   ]
