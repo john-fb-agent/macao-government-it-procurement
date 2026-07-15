@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-07-08T14:34:15.117837",
-  "total_records": 14,
+  "last_check": "2026-07-15T14:32:24.617106",
+  "total_records": 15,
   "records": [
     {
       "id": "2256d92aa672",
@@ -197,6 +197,20 @@
         "平台"
       ],
       "found_at": "2026-07-01T14:32:34.797079",
+      "match_type": "keyword"
+    },
+    {
+      "id": "a3ab26be06c9",
+      "department": "離島醫療綜合體北京協和醫院澳門醫學中心",
+      "summary": "公告一則，關於為取得“向協和澳門醫學中心供應及安裝高效液相色譜串聯質譜儀（LS—MS／MS）分析系統” 進行公開招標。",
+      "bulletin_number": "《公報》第28期,第二組,2026/07/15",
+      "date": "2026/07/15",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99360",
+      "title": "【離島醫療綜合體北京協和醫院澳門醫學中心】公告一則，關於為取得“向協和澳門醫學中心供應及安裝高效液相色譜串聯質譜儀（LS—MS／MS）分析系統” 進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-07-15T14:32:24.616004",
       "match_type": "keyword"
     }
   ]
