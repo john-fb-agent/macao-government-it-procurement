@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-07-29T14:30:10.686076",
-  "total_records": 18,
+  "last_check": "2026-08-05T14:30:18.019409",
+  "total_records": 19,
   "records": [
     {
       "id": "2256d92aa672",
@@ -254,6 +254,20 @@
         "平台"
       ],
       "found_at": "2026-07-22T14:30:04.362128",
+      "match_type": "keyword"
+    },
+    {
+      "id": "e62443ad8e03",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學提供空調系統保養服務進行公開招標。",
+      "bulletin_number": "《公報》第31期,第二組,2026/08/05",
+      "date": "2026/08/05",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99554",
+      "title": "【澳門大學】公告一則，關於為澳門大學提供空調系統保養服務進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-08-05T14:30:18.015559",
       "match_type": "keyword"
     }
   ]
