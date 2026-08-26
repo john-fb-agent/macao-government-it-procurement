@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-08-19T14:30:46.838359",
-  "total_records": 19,
+  "last_check": "2026-08-26T14:30:15.995655",
+  "total_records": 20,
   "records": [
     {
       "id": "2256d92aa672",
@@ -268,6 +268,20 @@
         "系統"
       ],
       "found_at": "2026-08-05T14:30:18.015559",
+      "match_type": "keyword"
+    },
+    {
+      "id": "c94a94da15ff",
+      "department": "澳門大學",
+      "summary": "公告一則，關於為澳門大學更新無線局域網系統（第一期）進行公開招標。",
+      "bulletin_number": "《公報》第34期,第二組,2026/08/26",
+      "date": "2026/08/26",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/99750",
+      "title": "【澳門大學】公告一則，關於為澳門大學更新無線局域網系統（第一期）進行公開招標。",
+      "keywords_matched": [
+        "系統"
+      ],
+      "found_at": "2026-08-26T14:30:15.994519",
       "match_type": "keyword"
     }
   ]
