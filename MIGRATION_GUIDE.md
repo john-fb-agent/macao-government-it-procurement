@@ -54,7 +54,7 @@ python3 src/main.py
 | **執行頻率** | 每週三 14:30 (Asia/Shanghai) |
 | **超時時間** | 1 小時 (3600 秒) |
 | **執行模式** | Isolated Agent Turn |
-| **模型** | qwencode/kimi-k2.5 |
+| **模型** | deepseek/deepseek-flash |
 | **通知渠道** | Telegram |
 
 ---

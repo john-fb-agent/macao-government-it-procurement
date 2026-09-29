@@ -9,14 +9,14 @@
 | **名稱** | Macao Government IT Procurement Monitor |
 | **執行頻率** | 每週三 14:30 (Asia/Shanghai) |
 | **超時時間** | 3600 秒 (1 小時) |
-| **模型** | qwencode/kimi-k2.5 |
+| **模型** | deepseek/deepseek-flash |
 
 ### 執行內容 (Payload)
 ```json
 {
   "kind": "agentTurn",
   "message": "Execute the Macao Government IT Procurement monitoring script:\n\ncd ~/gh-repo/macao-government-it-procurement && python3 src/main.py\n\nThis script:\n1. Scrapes https://www.bo.dsaj.gov.mo/cn/news/list/b/?d=13\n2. Filters IT-related procurements (software, hardware, network, security, etc.)\n3. Saves new records to data/records.json\n4. Generates GitHub Pages (index.html and recent.html)\n5. Pushes to GitHub\n\nTimeout: 1 hour (3600 seconds)\nLog all output.\nNotify user on success or failure with summary.",
-  "model": "qwencode/kimi-k2.5",
+  "model": "deepseek/deepseek-flash",
   "timeoutSeconds": 3600
 }
 ```
