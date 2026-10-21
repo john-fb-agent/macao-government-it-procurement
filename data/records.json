@@ -1,6 +1,6 @@
 {
-  "last_check": "2026-10-14T14:30:09.693937",
-  "total_records": 20,
+  "last_check": "2026-10-21T14:30:07.000408",
+  "total_records": 21,
   "records": [
     {
       "id": "2256d92aa672",
@@ -282,6 +282,20 @@
         "系統"
       ],
       "found_at": "2026-08-26T14:30:15.994519",
+      "match_type": "keyword"
+    },
+    {
+      "id": "55df19f2781e",
+      "department": "澳門理工大學",
+      "summary": "公告一則，關於撤銷“澳門理工大學購買超算伺服器”的公開招標。",
+      "bulletin_number": "《公報》第42期,第二組,2026/10/21",
+      "date": "2026/10/21",
+      "url": "https://www.bo.dsaj.gov.mo/cn/bo/b/link/100193",
+      "title": "【澳門理工大學】公告一則，關於撤銷“澳門理工大學購買超算伺服器”的公開招標。",
+      "keywords_matched": [
+        "伺服器"
+      ],
+      "found_at": "2026-10-21T14:30:06.999236",
       "match_type": "keyword"
     }
   ]
