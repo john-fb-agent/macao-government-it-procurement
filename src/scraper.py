@@ -23,7 +23,7 @@ class ProcurementScraper:
         self.keywords = [k.lower() for k in self.config['keywords']]
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'python-requests/2.31.0',  # BO serves a JS challenge page to browser-like UAs; plain UA returns the real HTML
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.8',
         })
